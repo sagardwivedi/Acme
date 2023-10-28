@@ -7,9 +7,9 @@ import {
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
 } from "@/app/ui/skeletons";
-import Cards from "../ui/dashboard/cards";
-import LatestInvoices from "../ui/dashboard/latest-invoices";
-import RevenueChart from "../ui/dashboard/revenue-chart";
+import Cards from "../../ui/dashboard/cards";
+import LatestInvoices from "../../ui/dashboard/latest-invoices";
+import RevenueChart from "../../ui/dashboard/revenue-chart";
 
 export const metadata: Metadata = {
   title: "Dashboard",

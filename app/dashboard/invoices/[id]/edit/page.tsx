@@ -1,9 +1,10 @@
-import Form from "@/app/ui/invoices/edit-form";
-import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
-import { fetchCustomers, fetchInvoiceById } from "@/app/lib/data";
-
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+import { fetchCustomers, fetchInvoiceById } from "@/app/lib/data";
 import { InvoiceForm } from "@/app/lib/definitions";
+import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
+import Form from "@/app/ui/invoices/edit-form";
 
 export const metadata: Metadata = {
   title: "Edit",
@@ -11,8 +12,12 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
-  const invoice = await fetchInvoiceById(id) as InvoiceForm;
+  const invoice = (await fetchInvoiceById(id)) as InvoiceForm;
   const customers = await fetchCustomers();
+
+  if (!invoice) {
+    notFound();
+  }
 
   return (
     <main>

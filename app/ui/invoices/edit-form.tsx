@@ -1,6 +1,5 @@
 "use client";
 
-import { CustomerField, InvoiceForm } from "@/app/lib/definitions";
 import {
   CheckIcon,
   ClockIcon,
@@ -8,6 +7,9 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+
+import { updateInvoice } from "@/app/lib/actions";
+import { CustomerField, InvoiceForm } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
 
 export default function EditInvoiceForm({
@@ -18,7 +20,7 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
   return (
-    <form>
+    <form action={updateInvoice}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Invoice ID */}
         <input type="hidden" name="id" value={invoice.id} />

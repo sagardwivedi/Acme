@@ -2,9 +2,9 @@ import { sql } from '@vercel/postgres';
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
+import { compare } from 'bcryptjs';
 
 import type { User } from '@/app/lib/definitions';
-import { compare } from 'bcrypt';
 import { authConfig } from './auth.config';
 
 async function getUser(email: string): Promise<User | undefined> {

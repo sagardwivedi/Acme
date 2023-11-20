@@ -15,7 +15,7 @@
     "@types/node": "20.9.2",
     "@vercel/postgres": "^0.5.1",
     "autoprefixer": "10.4.16",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "2.4.3",
     "clsx": "^2.0.0",
     "next": "^14.0.3",
     "next-auth": "beta",
@@ -29,7 +29,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/bcrypt": "latest",
+    "@types/bcryptjs": "latest",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
     "@vercel/style-guide": "^5.1.0",

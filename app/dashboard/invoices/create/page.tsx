@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import { fetchCustomers } from "@/app/lib/data";
-import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
-import Form from "@/app/ui/invoices/create-form";
+import { fetchCustomers } from '@/app/lib/data';
+import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+import Form from '@/app/ui/invoices/create-form';
 
 export const metadata: Metadata = {
-  title: "Create Invoice",
+  title: 'Create Invoice',
 };
 
 export default async function Page() {
@@ -15,8 +15,8 @@ export default async function Page() {
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: "Invoices", href: "/dashboard/invoices" },
-          { label: "Create Invoice", href: "/dashboard/invoices/create" },
+          { label: 'Invoices', href: '/dashboard/invoices' },
+          { label: 'Create Invoice', href: '/dashboard/invoices/create' },
         ]}
       />
       <Form customers={customers} />

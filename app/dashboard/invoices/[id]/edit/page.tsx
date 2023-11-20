@@ -1,13 +1,13 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
-import { fetchCustomers, fetchInvoiceById } from "@/app/lib/data";
-import { InvoiceForm } from "@/app/lib/definitions";
-import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
-import Form from "@/app/ui/invoices/edit-form";
+import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data';
+import { InvoiceForm } from '@/app/lib/definitions';
+import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
+import Form from '@/app/ui/invoices/edit-form';
 
 export const metadata: Metadata = {
-  title: "Edit",
+  title: 'Edit',
 };
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -23,9 +23,9 @@ export default async function Page({ params }: { params: { id: string } }) {
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: "Invoices", href: "/dashboard/invoices" },
+          { label: 'Invoices', href: '/dashboard/invoices' },
           {
-            label: "Edit Invoice",
+            label: 'Edit Invoice',
             href: `/dashboard/invoices/${id}/edit`,
             active: true,
           },

@@ -1,22 +1,21 @@
-"use client";
+'use client';
 
-import { ArrowRightIcon } from "@heroicons/react/20/solid";
+import { authenticate } from '@/app/lib/actions';
+import { Button } from '@/app/ui/button';
+import { lusitana } from '@/app/ui/fonts';
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import {
   AtSymbolIcon,
   ExclamationCircleIcon,
   KeyIcon,
-} from "@heroicons/react/24/outline";
-import { useFormState, useFormStatus } from "react-dom";
-
-import { lusitana } from "@/app/ui/fonts";
-import { authenticate } from "../lib/actions";
-import { Button } from "./button";
+} from '@heroicons/react/24/outline';
+import { useFormState, useFormStatus } from 'react-dom';
 
 export default function LoginForm() {
-  const [code, action] = useFormState(authenticate, undefined);
+  const [state, dispatch] = useFormState(authenticate, undefined);
 
   return (
-    <form action={action} className="space-y-3">
+    <form action={dispatch} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please log in to continue.
@@ -63,13 +62,15 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
-        <div className="flex h-8 items-end space-x-1">
-          {code === "CredentialSignin" && (
+        <div
+          className="flex h-8 items-end space-x-1"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {state === 'CredentialsSignin' && (
             <>
               <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-              <p aria-live="polite" className="text-sm text-red-500">
-                Invalid credentials
-              </p>
+              <p className="text-sm text-red-500">Invalid credentials</p>
             </>
           )}
         </div>

@@ -1,18 +1,18 @@
-import { Suspense } from "react";
-import { Metadata } from "next";
+import { Suspense } from 'react';
+import { Metadata } from 'next';
 
-import { lusitana } from "@/app/ui/fonts";
+import { lusitana } from '@/app/ui/fonts';
 import {
   CardsSkeleton,
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
-} from "@/app/ui/skeletons";
-import Cards from "../../ui/dashboard/cards";
-import LatestInvoices from "../../ui/dashboard/latest-invoices";
-import RevenueChart from "../../ui/dashboard/revenue-chart";
+} from '@/app/ui/skeletons';
+import Cards from '../../ui/dashboard/cards';
+import LatestInvoices from '../../ui/dashboard/latest-invoices';
+import RevenueChart from '../../ui/dashboard/revenue-chart';
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: 'Dashboard',
 };
 
 export default async function Page() {
